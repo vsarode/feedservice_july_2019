@@ -2,7 +2,7 @@ from feed_service_july_2019.db.feed_models.models import Topic
 
 
 def create_topic(data):
-    topic_object = Topic.objects.create(name=data['name'], created_by=data['username'])
+    topic_object = Topic.objects.create(name=data['name'], created_by=data['createdBy'])
     return topic_object
 
 
