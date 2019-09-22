@@ -40,9 +40,11 @@ class Downvote(models.Model):
 
 class Notification(models.Model):
     notification_type = (("answer", "answer"),
-                         ("other", "other"),)
+                         ("upvote", "upvote"),
+                         ("downvote", "downvote"),)
     type = models.CharField(max_length=256, choices=notification_type)
     entity = models.CharField(max_length=12)
     actioned_entity = models.CharField(max_length=12)
     done_by = models.CharField(max_length=1024)
     owner = models.CharField(max_length=1024)
+    is_viewed = models.BooleanField(default=False)
